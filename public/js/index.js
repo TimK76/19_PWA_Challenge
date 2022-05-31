@@ -111,7 +111,7 @@ function sendTransaction(isAdding) {
   populateChart();
   populateTable();
   populateTotal();
-  
+  console.log("Transaction");
   // also send to server
   fetch("/api/transaction", {
     method: "POST",
@@ -136,6 +136,7 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
+    console.log("error occured");
     saveRecord(transaction);
 
     // clear form
